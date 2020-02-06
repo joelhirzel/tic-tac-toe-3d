@@ -17,6 +17,15 @@ public class Frame {
         return this.frame.getHeight();
     }
 
+    public void addComponent(Splash splash) {
+        this.frame.add(splash);
+        this.frame.setVisible(true);
+    }
+
+    public void removeComponent(Splash splash) {
+        this.frame.remove(splash);
+    }
+
     public void addComponent(Drawing drawing) {
         this.frame.add(drawing);
         this.frame.setVisible(true);
@@ -30,7 +39,15 @@ public class Frame {
         this.frame.addKeyListener(key);
     }
 
+    public void addKey(SplashKeys key) {
+        this.frame.addKeyListener(key);
+    }
+
     public void removeKey(IsKeyPressed key) {
+        this.frame.removeKeyListener(key);
+    }
+
+    public void removeKey(SplashKeys key) {
         this.frame.removeKeyListener(key);
     }
 
