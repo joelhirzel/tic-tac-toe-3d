@@ -7,9 +7,17 @@ extends JFrame {
     public static void main(String[] args) throws InterruptedException {
         Frame frame = new Frame();
         int[] settings = new int[3];
-        TicTacToe.setup(frame, settings);
-        int winner = TicTacToe.play(frame, settings);
-        System.out.println("Player " + (winner + 1) + " wins!");
+        while (true) {
+            TicTacToe.setup(frame, settings);
+            int winner = TicTacToe.play(frame, settings);
+            TicTacToe.end(frame, winner);
+        }
+    }
+
+    public static void end(Frame frame, int winner) throws InterruptedException {
+        End end = new End(frame, winner);
+        frame.addComponent(end);
+        TimeUnit.SECONDS.sleep(3L);
     }
 
     public static int play(Frame frame, int[] settings) {

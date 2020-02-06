@@ -35,6 +35,11 @@ public class Frame {
         this.frame.remove(drawing);
     }
 
+    public void addComponent(End end) {
+        this.frame.add(end);
+        this.frame.setVisible(true);
+    }
+
     public void addKey(IsKeyPressed key) {
         this.frame.addKeyListener(key);
     }
