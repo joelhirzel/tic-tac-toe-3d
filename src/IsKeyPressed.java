@@ -26,6 +26,28 @@ implements KeyListener {
         double[] rotation = new double[]{0.0, 0.0, 0.0};
         int[] selection = new int[]{0, 0, 0};
         this.pressed.add(Character.valueOf(e.getKeyChar()));
+        if (e.getKeyCode() == 74) {
+            result[0] = -2.0;
+        } else if (e.getKeyCode() == 76) {
+            result[0] = 2.0;
+        }
+        if (e.getKeyCode() == 73) {
+            result[1] = -2.0;
+        } else if (e.getKeyCode() == 75) {
+            result[1] = 2.0;
+        }
+        if (e.getKeyCode() == 80) {
+            result[2] = 5.0;
+        } else if (e.getKeyCode() == 79) {
+            result[2] = -5.0;
+        }
+        if (e.getKeyCode() == 82) {
+            rotation[1] = Math.PI / 180;
+        } else if (e.getKeyCode() == 84) {
+            rotation[0] = Math.PI / 180;
+        } else if (e.getKeyCode() == 90) {
+            rotation[2] = Math.PI / 180;
+        }
         if (e.getKeyCode() == 37) {
             selection[0] = -1;
             this.drawing.moveSelection(selection);
